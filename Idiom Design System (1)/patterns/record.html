@@ -1,0 +1,75 @@
+<!-- @dsCard group="Surfaces" viewport="1400x1080" name="Assurance package" subtitle="One object: identity, what it provides, what stays with the consumer, who consumes it" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Enterprise IAM assurance package</title><link rel="stylesheet" href="../styles.css">
+<style>body{padding:28px}.wrap{max-width:1340px;margin:0 auto;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-surface);padding:0 var(--layout-gutter) var(--space-8)}</style>
+</head><body><div class="wrap">
+<div class="objhead" style="padding-top:26px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="#">Library</a><svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="m9.5 6 6 6-6 6"></path></svg><a href="#">Reusable assurance</a><svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="m9.5 6 6 6-6 6"></path></svg><strong>Enterprise IAM</strong></nav>
+<div class="objhead-id">
+<div style="min-width:0"><h1 class="t-title">Enterprise IAM assurance package</h1>
+<div class="states"><span class="t-label">Reusable assurance package</span><span class="badge neutral">Published</span><span class="badge problem">Impacted</span></div></div>
+<div style="flex:1"></div>
+<button class="btn primary">Publish version</button><button class="btn">Supersede</button>
+</div>
+<dl class="objhead-meta">
+<div><dt>Provider</dt><dd>Enterprise IAM</dd></div>
+<div><dt>Owner</dt><dd>Enterprise Security / IAM</dd></div>
+<div><dt>Version</dt><dd><span class="t-mono">v4.2</span></dd></div>
+<div><dt>Effective</dt><dd>Jul 30</dd></div>
+<div><dt>Last assessed</dt><dd>Jul 30 by M. Okafor</dd></div>
+<div><dt>Consumers</dt><dd>14</dd></div>
+</dl>
+<div style="display:flex;gap:var(--space-5)"><a class="link" href="#">Why is this here?</a><a class="link" href="#">Activity</a></div>
+</div>
+<div class="tabs" style="margin-top:26px"><button class="tab on">Overview</button><button class="tab">Provides</button><button class="tab">Consumer responsibilities</button><button class="tab">Applicability</button><button class="tab">Evidence &amp; results</button><button class="tab">Consumers</button><button class="tab">Versions</button></div>
+<div class="notice" style="margin-top:28px"><span class="badge problem">Impacted</span><div class="t-body" style="flex:1">The enterprise gateway configuration moved to GW-STD-12 on Aug 19. Six objectives in this package assert the previous configuration and are held at review required until reassessment.</div><a class="link" href="#">Review impact</a></div>
+<div class="split" style="margin-top:36px">
+<section>
+<div class="t-strong" style="margin-bottom:6px">What this package is</div>
+<dl class="keyvalue">
+<dt>Provider asset</dt><dd>Enterprise IAM · shared service</dd>
+<dt>Basis</dt><dd>ACME organization profile, NIST SP 800-53 rev 5</dd>
+<dt>Objectives provided</dt><dd class="num">38</dd>
+<dt>Consumer responsibilities</dt><dd class="num">7, plus 2 requiring attestation</dd>
+<dt>Applicability</dt><dd>6 facts checked · identity provider, credential type, enclave class, tenancy, region, FIPS mode</dd>
+<dt>Evidence visibility</dt><dd>Restricted — the authorized result is reusable, the evidence is not readable by consumers</dd>
+<dt>Next review</dt><dd>Jan 30</dd>
+<dt>Promoted from</dt><dd><span class="muted">Originated here</span></dd>
+</dl>
+<h2 class="t-section" style="margin-top:48px;margin-bottom:14px">What it provides</h2>
+<table class="tbl"><colgroup><col style="width:118px"><col><col style="width:150px"><col style="width:96px"></colgroup>
+<thead><tr><th>Objective</th><th>Statement</th><th>Determination</th><th>Determined</th></tr></thead>
+<tbody>
+<tr><td class="t-mono">IA-02(1)</td><td class="trunc">Multifactor authentication enforced for privileged accounts</td><td><span class="muted">Satisfied</span></td><td class="t-micro">Jul 30</td></tr>
+<tr><td class="t-mono">IA-05(1)</td><td class="trunc">Password-based authenticator strength enforced at the identity provider</td><td><span class="muted">Satisfied</span></td><td class="t-micro">Jul 30</td></tr>
+<tr><td class="t-mono">AC-02a.[01]</td><td class="trunc">Account types defined and account managers assigned</td><td><span class="muted">Satisfied</span></td><td class="t-micro">Jul 30</td></tr>
+<tr><td class="t-mono">AC-02f.[02]</td><td class="trunc">Enterprise account disablement on separation within defined period</td><td><span class="muted">Satisfied</span></td><td class="t-micro">Jul 30</td></tr>
+<tr><td class="t-mono">AC-17a.[01]</td><td class="trunc">Remote access methods documented, authorized and monitored</td><td><span class="badge attention">Reassessment required</span></td><td class="t-micro">Jul 30</td></tr>
+<tr><td class="t-mono">IA-04c.[01]</td><td class="trunc">Identifiers reassigned only after the defined prevention period</td><td><span class="muted">Satisfied</span></td><td class="t-micro">Jul 30</td></tr>
+</tbody></table>
+<div class="pager" style="margin-top:20px"><span class="num">1–6 of 38 objectives</span><div style="display:flex;gap:8px"><button class="btn quiet" disabled>Previous</button><button class="btn quiet">Next</button></div></div>
+<h2 class="t-section" style="margin-top:48px;margin-bottom:6px">What stays with the consumer</h2>
+<p class="t-label" style="margin-bottom:14px">Enterprise IAM provides authentication, credential lifecycle and enterprise account disablement. Consumers remain responsible for the local half.</p>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Local role assignment</div><div class="t-micro trunc">Program-defined privileged roles · 3 objectives</div></div><span class="badge neutral">Consumer</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Privileged-role approval workflow</div><div class="t-micro trunc">Who approves, and on what evidence · 2 objectives</div></div><span class="badge neutral">Consumer</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Removal of program-specific entitlements</div><div class="t-micro trunc">At offboarding and at contract end · 2 objectives</div></div><span class="badge neutral">Consumer</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Enclave account scope</div><div class="t-micro trunc">Reuse permitted only after local confirmation · 2 objectives</div></div><span class="badge attention">Attestation</span></div>
+</section>
+<aside>
+<div style="margin-bottom:44px"><div class="t-strong" style="margin-bottom:14px">How the obligation divides</div>
+<div class="meter"><i style="width:81%;background:var(--series-1)"></i><i style="width:15%;background:var(--series-2)"></i><i style="width:4%;background:var(--series-3)"></i></div>
+<div class="meter-key"><div class="nm"><b style="background:var(--series-1)"></b>Provided</div><div class="vl">38</div><div class="nm"><b style="background:var(--series-2)"></b>Consumer responsibility</div><div class="vl">7</div><div class="nm"><b style="background:var(--series-3)"></b>Attestation</div><div class="vl">2</div></div>
+<p class="t-label" style="margin-top:16px">Three counts, not a percentage. A consumer that reads only the first number believes it inherited nine objectives it still owns.</p></div>
+<div style="margin-bottom:44px"><div class="t-strong" style="margin-bottom:6px">Consumers</div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Nighthawk</div><div class="t-micro trunc">Program · consuming v4.2</div></div><span class="badge problem">Impacted</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Falcon v6 baseline</div><div class="t-micro trunc">Product baseline · consuming v4.2</div></div><span class="badge neutral">Active</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Kestrel</div><div class="t-micro trunc">Program · consuming v3.1</div></div><span class="badge attention">Delta</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Product Division A</div><div class="t-micro trunc">Organization unit · 11 downstream programs</div></div><span class="badge neutral">Active</span></div>
+<a class="link" href="#" style="display:inline-block;margin-top:16px">All 14 consumers</a></div>
+<div><div class="t-strong" style="margin-bottom:6px">Versions</div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">v4.2</div><div class="t-micro trunc">Current · published Jul 30</div></div><span class="badge neutral">Published</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">v4.1</div><div class="t-micro trunc">Superseded Jul 30 · 2 consumers still on it</div></div><span class="badge neutral">Superseded</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">v3.1</div><div class="t-micro trunc">Superseded Feb 14 · consumed by Kestrel</div></div><span class="badge neutral">Superseded</span></div>
+<a class="link" href="#" style="display:inline-block;margin-top:16px">Open the log</a></div>
+</aside>
+</div>
+</div></body></html>

@@ -1,0 +1,28 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Navigation" subtitle="NavGroup, NavItem, Tabs, SegmentedControl, Breadcrumb" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--surface);margin:0;padding:22px 24px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.IdiomDesignSystem_c24a1d;
+const {Avatar,Badge,Button,Icon,IconButton,Link,Input,Select,Switch,Checkbox,SearchInput,FilterBar,NavItem,NavGroup,Tabs,SegmentedControl,Breadcrumb,Metric,Table,ListRow,KeyValue,Pagination,Meter,LineChart,Notice,EmptyState,Dialog,Menu}=NS;
+
+function Demo(){
+  const [tab,setTab]=React.useState("Overview"),[view,setView]=React.useState("Ready for review"),[nav,setNav]=React.useState("Programs");
+  return <div style={{display:"flex",gap:36}}>
+    <div style={{width:220,borderRight:"1px solid var(--hairline)",paddingRight:18}}>
+      <NavGroup>{[["home","Home","6"],["org","Organization","23"],["box","Assets","4,112"]].map(i=><NavItem key={i[1]} icon={<Icon name={i[0]}/>} label={i[1]} count={i[2]||undefined} active={nav===i[1]} onClick={e=>{e.preventDefault();setNav(i[1]);}}/>)}</NavGroup>
+      <NavGroup label="Delivery">{[["lay","Products & systems","48"],["clip","Programs","6"]].map(i=><NavItem key={i[1]} icon={<Icon name={i[0]}/>} label={i[1]} count={i[2]} active={nav===i[1]} onClick={e=>{e.preventDefault();setNav(i[1]);}}/>)}</NavGroup>
+    </div>
+    <div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",gap:26}}>
+      <Breadcrumb trail={[{label:"Library",href:"#"},{label:"Reusable assurance",href:"#"},{label:"Enterprise IAM"}]}/>
+      <Tabs tabs={["Overview","Provides","Consumer responsibilities","Evidence","Consumers"]} active={tab} onChange={setTab}/>
+      <SegmentedControl options={["Ready for review","Returned","Conflicts"]} active={view} onChange={setView}/>
+    </div>
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script></body></html>

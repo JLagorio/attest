@@ -1,0 +1,61 @@
+<!-- @dsCard group="Surfaces" viewport="1560x920" name="Reviewer workspace" subtitle="Queue, the objective under review, and the provenance that has to hold up" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reviewer queue — TMC FY26 Q3</title><link rel="stylesheet" href="../styles.css">
+<style>body{padding:28px}.wrap{max-width:1500px;margin:0 auto;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-surface);padding:0 var(--layout-gutter) var(--space-8)}.q{display:block;width:100%;text-align:left;padding:12px 10px;border:0;background:transparent;border-radius:var(--radius-md)}.q:hover{background:var(--surface-hover)}.q.on{background:var(--surface-selected)}</style>
+</head><body><div class="wrap">
+<div class="page-head">
+<div style="min-width:0"><h1 class="t-title">Reviewer queue</h1><div class="t-label" style="margin-top:4px">TMC FY26 Q3 · 41 responses submitted, 14 ready for a determination</div></div>
+<div style="flex:1"></div>
+<div class="segmented"><button class="on">Ready for review</button><button>Returned</button><button>Conflicts</button><button>Inherited</button></div>
+</div>
+<div class="triptych" style="margin-top:32px">
+<section>
+<div class="t-strong" style="margin-bottom:10px">14 ready</div>
+<button class="q on"><div class="t-strong trunc">Access to security functions restricted</div><div class="t-micro trunc" style="margin-top:2px">AC-06(1) · Platform Security · 6h ago</div></button>
+<button class="q"><div class="t-strong trunc">Privileged account use monitored</div><div class="t-micro trunc" style="margin-top:2px">AC-02g.[01] · SOC · yesterday</div></button>
+<button class="q"><div class="t-strong trunc">Audit records generated for defined events</div><div class="t-micro trunc" style="margin-top:2px">AU-12a.[02] · SOC · Aug 20</div></button>
+<button class="q"><div class="t-strong trunc">Nonlocal maintenance sessions terminated</div><div class="t-micro trunc" style="margin-top:2px">MA-04a.[02] · Field Support · Jul 18</div></button>
+<button class="q"><div class="t-strong trunc">Remote access methods authorized</div><div class="t-micro trunc" style="margin-top:2px">AC-17a.[01] · Enterprise VPN · yesterday</div></button>
+<button class="q"><div class="t-strong trunc">Transmission confidentiality on C2 links</div><div class="t-micro trunc" style="margin-top:2px">SC-08(1) · Comms Eng · Aug 12</div></button>
+<a class="link" href="#" style="display:inline-block;margin-top:14px">Filter the queue</a>
+</section>
+<section>
+<div class="states" style="margin-top:0"><span class="t-mono">AC-06(1)</span><span class="badge attention">Ready for review</span><span class="badge neutral">Residual after inheritance</span></div>
+<h2 class="t-section" style="margin-top:12px">Access to security functions is restricted to explicitly authorized personnel</h2>
+<p class="t-label" style="margin-top:8px">Nighthawk · Tactical Management Controller · Identity and access package · residual after Enterprise IAM v4.2</p>
+<h3 class="t-strong" style="margin-top:36px;margin-bottom:6px">Responses</h3>
+<div class="listrow" style="align-items:flex-start"><div class="avatar">JW</div><div class="who"><div class="t-strong">J. Whitfield · Platform Security</div><p class="t-body" style="margin-top:4px">Privileged roles on the TMC are requested in the program access queue and approved by the platform security lead. The approver checks the requester's clearance record and the role's justification against the program role matrix. Approvals are recorded as tickets and exported monthly.</p><div class="t-micro" style="margin-top:6px">Submitted 6h ago · procedure TMC-ACC-004 linked</div></div><span class="badge neutral">Submitted</span></div>
+<div class="listrow" style="align-items:flex-start"><div class="avatar">RD</div><div class="who"><div class="t-strong">R. Delgado · Field Support</div><p class="t-body" style="margin-top:4px">Field engineers use a shared maintenance account during deployment windows. Approval is verbal at the deployment briefing.</p><div class="t-micro" style="margin-top:6px">Submitted Aug 22 · no evidence linked</div></div><span class="badge attention">Insufficient information</span></div>
+<h3 class="t-strong" style="margin-top:36px;margin-bottom:6px">Evidence</h3>
+<div class="listrow"><div class="who"><div class="t-strong trunc">TMC-ACC-004 · Privileged access procedure</div><div class="t-micro trunc">Owner Platform Security · validated Aug 4</div></div><span class="muted">Current</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Access queue export, Jul 2026</div><div class="t-micro trunc">Owner Platform Security · covers 31 approvals</div></div><span class="muted">Current</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Deployment briefing record</div><div class="t-micro trunc">Requested from Field Support Aug 22</div></div><span class="badge unknown">Not provided</span></div>
+<div class="notice" style="margin-top:28px"><span class="badge attention">Two accounts of the same control</span><div class="t-body" style="flex:1">The responses describe different approval paths. A determination that cites only the first one will not survive the shared maintenance account.</div></div>
+<div style="display:flex;align-items:center;gap:var(--space-2);margin-top:32px;flex-wrap:wrap"><button class="btn primary">Record determination</button><button class="btn">Request clarification</button><button class="btn">Accept as input</button><button class="btn">Create finding</button><button class="btn quiet">Escalate applicability</button></div>
+<p class="t-label" style="margin-top:16px">Recording a determination asks for the outcome, a rationale, the observations it rests on, and the snapshot it was made against. It is not a one-click state change.</p>
+</section>
+<aside>
+<div style="margin-bottom:40px"><div class="t-strong" style="margin-bottom:14px">Why this objective is local</div>
+<ol class="why">
+<li><div><b>Enterprise IAM v4.2 covers the enterprise half</b><span>Authentication, credential lifecycle, enterprise account disablement</span></div></li>
+<li><div><b>Local role assignment stayed with the consumer</b><span>Named as a consumer responsibility in the package, effective Jul 30</span></div></li>
+<li><div><b>Nighthawk declared the TMC as in-scope</b><span>Program setup, Aug 4 · A. Nkemelu</span></div></li>
+<li><div><b>One residual task was generated, not thirty-eight</b><span>The other 37 objectives resolved through inheritance</span></div></li>
+</ol></div>
+<div style="margin-bottom:40px"><div class="t-strong" style="margin-bottom:14px">Applicability</div>
+<dl class="keyvalue" style="grid-template-columns:140px minmax(0,1fr)">
+<dt>Identity provider</dt><dd>Enterprise, matched</dd>
+<dt>Credential type</dt><dd>PIV, matched</dd>
+<dt>Enclave class</dt><dd>Air-gapped, matched</dd>
+<dt>Shared accounts</dt><dd><span class="muted">Unknown</span></dd>
+</dl></div>
+<div><div class="t-strong" style="margin-bottom:14px">Prior determination</div>
+<dl class="keyvalue" style="grid-template-columns:140px minmax(0,1fr)">
+<dt>Outcome</dt><dd><span class="muted">Satisfied</span></dd>
+<dt>Assessment</dt><dd>TMC FY25 Q4</dd>
+<dt>Determined</dt><dd>Dec 12 by M. Okafor</dd>
+<dt>Changed since</dt><dd>Shared maintenance account introduced Jun 2026</dd>
+</dl>
+<p class="t-label" style="margin-top:16px">The previous outcome is shown so it can be argued with, not inherited.</p></div>
+</aside>
+</div>
+</div></body></html>

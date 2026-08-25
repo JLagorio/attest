@@ -1,0 +1,64 @@
+<!-- @dsCard group="Surfaces" viewport="1180x1000" name="Program setup" subtitle="Authoring: fields, switches, shared dependencies, and what launch will create" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Program setup — Nighthawk</title><link rel="stylesheet" href="../styles.css">
+<style>body{padding:28px}.wrap{max-width:1120px;margin:0 auto;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-surface);padding:0 var(--layout-gutter) var(--space-8)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}</style>
+</head><body><div class="wrap">
+<div class="page-head">
+<div style="min-width:0"><h1 class="t-title">Program setup</h1><div class="t-label" style="margin-top:4px">Step 8 of 9 · review · resumable, and incomplete truth is allowed</div></div>
+<div style="flex:1"></div>
+<button class="btn quiet">Save draft</button>
+</div>
+<div class="tabs" style="margin-top:26px"><button class="tab">Basics</button><button class="tab">Security context</button><button class="tab">Profile sources</button><button class="tab">Customer requirements</button><button class="tab">Systems</button><button class="tab on">Dependencies &amp; ownership</button><button class="tab">Review</button></div>
+<div class="split" style="margin-top:36px">
+<section style="max-width:var(--layout-reading)">
+<div class="t-strong" style="margin-bottom:6px">Program</div>
+<div class="pair" style="margin-top:16px">
+<label class="field"><span>Program name</span><input class="input" value="Nighthawk"></label>
+<label class="field"><span>Customer or mission</span><input class="input" value="ACME Defense — Contract 40118"></label>
+</div>
+<div class="pair" style="margin-top:16px">
+<label class="field"><span>Target milestone</span><input class="input" value="Control freeze, Oct 5"></label>
+<label class="field"><span>Program SSE</span><input class="input" value="A. Nkemelu"></label>
+</div>
+<div class="pair" style="margin-top:16px">
+<label class="field"><span>Organization profile</span><div class="select"><select class="input"><option>ACME moderate, NIST SP 800-53 rev 5</option><option>ACME high, NIST SP 800-53 rev 5</option><option>Product Division A overlay</option></select><svg class="icon" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"></path></svg></div></label>
+<label class="field"><span>Assessment authority</span><div class="select"><select class="input"><option>M. Okafor — assessment lead</option><option>Enterprise Security / assessment</option></select><svg class="icon" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"></path></svg></div></label>
+</div>
+<h2 class="t-section" style="margin-top:48px;margin-bottom:6px">Shared organizational dependencies</h2>
+<p class="t-label" style="margin-bottom:18px">Naming a dependency is what makes its assurance reusable here. Anything left unchecked generates local work instead.</p>
+<label class="toggle-row" style="padding:10px 0"><button class="check on" aria-checked="true" role="checkbox"><svg class="icon" viewBox="0 0 24 24"><path d="m5.5 12.4 4.4 4.4L18.5 7.6"></path></svg></button><div><div class="t-body">Enterprise IAM</div><div class="t-micro">v4.2 · covers 38 objectives, 7 stay with you</div></div></label>
+<label class="toggle-row" style="padding:10px 0"><button class="check on" aria-checked="true" role="checkbox"><svg class="icon" viewBox="0 0 24 24"><path d="m5.5 12.4 4.4 4.4L18.5 7.6"></path></svg></button><div><div class="t-body">Enterprise PKI</div><div class="t-micro">v3.2 published; you are pinned to v3.1 · 2 objectives to re-evaluate</div></div></label>
+<label class="toggle-row" style="padding:10px 0"><button class="check on" aria-checked="true" role="checkbox"><svg class="icon" viewBox="0 0 24 24"><path d="m5.5 12.4 4.4 4.4L18.5 7.6"></path></svg></button><div><div class="t-body">Enterprise signing service</div><div class="t-micro">v1.4 · covers 11 objectives</div></div></label>
+<label class="toggle-row" style="padding:10px 0"><button class="check" aria-checked="false" role="checkbox"><svg class="icon" viewBox="0 0 24 24"><path d="m5.5 12.4 4.4 4.4L18.5 7.6"></path></svg></button><div><div class="t-body">Vulnerability management</div><div class="t-micro">The air-gapped enclave is out of scope for the enterprise scanner</div></div></label>
+<h2 class="t-section" style="margin-top:48px;margin-bottom:18px">How work is generated</h2>
+<div class="toggle-row" style="padding:12px 0"><button class="switch on" role="switch" aria-checked="true"><i></i></button><div><div class="t-body">Resolve inheritance before generating tasks</div><div class="t-micro">Contributors are only asked what the organization does not already answer.</div></div></div>
+<div class="toggle-row" style="padding:12px 0"><button class="switch on" role="switch" aria-checked="true"><i></i></button><div><div class="t-body">Require attestation before reusing conditional assurance</div><div class="t-micro">Two Enterprise IAM objectives are reusable only after local confirmation.</div></div></div>
+<div class="toggle-row" style="padding:12px 0"><button class="switch" role="switch" aria-checked="false"><i></i></button><div><div class="t-body">Launch with unresolved applicability</div><div class="t-micro">Permitted, and recorded as 21 open decisions rather than assumed Not applicable.</div></div></div>
+<div class="toggle-row" style="padding:12px 0"><button class="switch on" role="switch" aria-checked="true"><i></i></button><div><div class="t-body">Notify owners at launch</div><div class="t-micro">Immediate for direct assignments, digest for watched scopes.</div></div></div>
+<div style="display:flex;align-items:center;gap:var(--space-2);margin-top:40px"><button class="btn primary">Launch program</button><button class="btn">Save draft</button></div>
+<p class="t-label" style="margin-top:16px">Launch pins every source version, creates the program graph, and notifies the owners named above. Sources stay editable; the pinned versions do not.</p>
+</section>
+<aside>
+<div style="margin-bottom:40px"><div class="t-strong" style="margin-bottom:14px">What launch will create</div>
+<dl class="keyvalue" style="grid-template-columns:1fr auto">
+<dt>Obligations in the effective profile</dt><dd class="num">327</dd>
+<dt>Resolved by inherited assurance</dt><dd class="num">184</dd>
+<dt>Residual local work</dt><dd class="num">63</dd>
+<dt>Attestations required</dt><dd class="num">4</dd>
+<dt>Applicability decisions open</dt><dd class="num">21</dd>
+<dt>Systems added</dt><dd class="num">4</dd>
+<dt>Missing owners</dt><dd class="num">7</dd>
+<dt>Source conflicts</dt><dd class="num">2</dd>
+</dl>
+<p class="t-label" style="margin-top:16px">Counts, not a readiness score. The last three are the ones that will slow the program down.</p></div>
+<div style="margin-bottom:40px"><div class="t-strong" style="margin-bottom:6px">Before you launch</div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">7 systems and assets have no owner</div><div class="t-micro trunc">Their tasks will be created unassigned</div></div><a class="link" href="#">Assign</a></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">CR-118 conflicts with the organization default</div><div class="t-micro trunc">24 characters against 15 · needs a program authority decision</div></div><a class="link" href="#">Resolve</a></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">TPM model disputed on Falcon v6</div><div class="t-micro trunc">PLM says Model Y, the engineer says Model Z</div></div><a class="link" href="#">Resolve</a></div></div>
+<div><div class="t-strong" style="margin-bottom:6px">Systems in this program</div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Falcon v6 variant</div><div class="t-micro trunc">From a published baseline · 3 known deltas</div></div><span class="badge attention">Delta</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Tactical Management Controller</div><div class="t-micro trunc">New system · architecture partial</div></div><span class="badge unknown">Unknown</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Ground data terminal</div><div class="t-micro trunc">Published baseline, assumptions unreviewed</div></div><span class="badge attention">Not reviewed</span></div>
+<div class="listrow"><div class="who"><div class="t-strong trunc">Enterprise signing service</div><div class="t-micro trunc">Consumed, not delivered</div></div><span class="badge neutral">External</span></div></div>
+</aside>
+</div>
+</div></body></html>

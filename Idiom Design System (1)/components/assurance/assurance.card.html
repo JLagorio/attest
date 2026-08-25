@@ -1,0 +1,73 @@
+<!-- @dsCard group="Components" viewport="860x620" name="Assurance" subtitle="StateBadge, ObjectHeader, Provenance, UnknownItem, SourceCompare, ResidualPanel, WorkRow" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--surface);margin:0;padding:22px 24px}h2{margin:0 0 12px}.sect{margin-bottom:36px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.IdiomDesignSystem_c24a1d;
+const {Button,StateBadge,ObjectHeader,Provenance,UnknownItem,SourceCompare,ResidualPanel,WorkRow}=NS;
+function Demo(){return <div>
+<div className="sect">
+  <h2 className="t-section">State vocabulary</h2>
+  <div className="states">
+    {["Inherited — current","Planned","Published","Not applicable","Awaiting response","Ready for review","Attestation required","Reassessment required","Other than satisfied","Conflict","Impacted","Unknown","Evidence restricted","Satisfied"].map(s=><StateBadge key={s} state={s}/>)}
+  </div>
+  <p className="t-label" style={{marginTop:14}}>One label in, one tier out. Satisfied is the muted word at the end — never a badge, never green.</p>
+</div>
+<div className="sect">
+  <h2 className="t-section">Object header</h2>
+  <ObjectHeader crumbs={[{label:"Library",href:"#"},{label:"Reusable assurance",href:"#"},{label:"Enterprise IAM"}]}
+    name="Enterprise IAM assurance package" type="Reusable assurance package" states={["Published","Impacted"]}
+    meta={[{label:"Provider",value:"Enterprise IAM"},{label:"Owner",value:"Enterprise Security / IAM"},{label:"Version",value:<span className="t-mono">v4.2</span>},{label:"Last assessed",value:"Jul 30"},{label:"Consumers",value:"14"}]}
+    actions={<><Button variant="primary">Publish version</Button><Button>Supersede</Button></>}
+    onWhy={()=>{}} onActivity={()=>{}}/>
+</div>
+<div className="sect">
+  <h2 className="t-section">Work queue</h2>
+  <WorkRow title="Describe how privileged account requests are approved" kind="Question" target="Nighthawk · Tactical Management Controller" owner="You" due="Today" state="Awaiting response" blocking="Blocks the Oct 5 control freeze"/>
+  <WorkRow title="14 responses ready for review" kind="Determination" target="TMC FY26 assessment" due="Today" state="Ready for review"/>
+  <WorkRow title="Confirm the production signing configuration" kind="Evidence request" target="Falcon v6 · signing service" owner="Unassigned" due="Sep 2" state="Unknown"/>
+</div>
+<div className="sect">
+  <h2 className="t-section">Unknowns</h2>
+  <UnknownItem subject="Processor / SoC" what="Production SoC has not been selected." blocks={["Blocks 8 implementation mappings","3 assessment objectives"]} owner="Hardware Engineering" neededBy="Sep 14" action={<Button>Assign discovery</Button>}/>
+  <UnknownItem subject="Production signing configuration" what="Reported as Enabled in the baseline, unconfirmed on this build." blocks={["Blocks attestation on 2 objectives"]} owner={null} neededBy="Sep 2" action={<Button>Assign discovery</Button>}/>
+</div>
+<div className="sect">
+  <h2 className="t-section">Competing sources</h2>
+  <SourceCompare
+    rows={[{source:"Organization baseline",value:"15",scope:"ACME Defense",authority:"Published default"},
+           {source:"Product baseline",value:"No change",scope:"Falcon v6",authority:"Inherited"},
+           {source:"Customer CR-118",value:"24",scope:"Nighthawk",authority:"Customer source"}]}
+    effective={{value:"24",scope:"Nighthawk",authority:"Approved by A. Nkemelu, Aug 12"}}
+    note="The organization default is unchanged. Nighthawk carries the stronger value for the life of the contract."/>
+</div>
+<div className="sect">
+  <h2 className="t-section">Residual after inheritance</h2>
+  <div style={{maxWidth:420}}>
+    <ResidualPanel provider="Enterprise IAM" version="v4.2" covers={38} residual={7} attestation={2}
+      lastAssessed="Jul 30" evidence="Restricted — result reusable"
+      items={[{title:"Local role assignment",meta:"Nighthawk privileged roles · 3 objectives",state:"Awaiting response"},
+              {title:"Privileged-role approval workflow",meta:"Program-specific · 2 objectives",state:"Planned"},
+              {title:"Enclave account scope confirmation",meta:"Attestation · 2 objectives",state:"Attestation required"}]}
+      actions={<><Button variant="primary">Accept consumption</Button><Button>Review applicability</Button></>}/>
+  </div>
+</div>
+<div>
+  <h2 className="t-section">Why is this here?</h2>
+  <div style={{maxWidth:440}}>
+    <Provenance state="Inherited — current"
+      steps={[{label:"Nighthawk consumes Enterprise IAM production configuration X",detail:"Declared as a shared dependency at program setup, Aug 4"},
+              {label:"Enterprise IAM v4.2 covers IA-05(1)",detail:"Published by Enterprise Security / IAM, effective Jul 30"},
+              {label:"All six applicability facts matched the package predicate",detail:"Identity provider, credential type, enclave class, tenancy, region, FIPS mode"},
+              {label:"The provider result is current",detail:"Determined Satisfied by M. Okafor on Jul 30 · next review Jan 30"}]}
+      residual="Local role assignment and privileged-role approval stay with Nighthawk. One residual task remains."
+      invalidatedBy="A change to the identity provider or credential type, or a new determination on the provider result."
+      authority="Enterprise Security / IAM — assurance owner"/>
+  </div>
+</div>
+</div>;}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script></body></html>

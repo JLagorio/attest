@@ -1,0 +1,11 @@
+:root{
+/* one scale. Grouping is done with these, not with borders. */
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;
+--space-7:32px;--space-8:40px;--space-9:56px;--space-10:80px;--space-11:120px;
+/* three radii and a pill. Nothing rounds harder than 8px unless it is a pill. */
+--radius-sm:4px;--radius-md:6px;--radius-lg:8px;--radius-pill:999px;
+/* control metrics */
+--control-h:34px;--field-h:38px;--row-h:52px;
+/* layout */
+--layout-max:1560px;--layout-nav:248px;--layout-aside:340px;--layout-queue:272px;--layout-gutter:32px;--layout-reading:660px;
+}

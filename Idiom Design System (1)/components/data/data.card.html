@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" viewport="700x540" name="Data" subtitle="Metric, Table, ListRow, KeyValue, Pagination, Meter, LineChart" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--surface);margin:0;padding:22px 24px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.IdiomDesignSystem_c24a1d;
+const {Avatar,Badge,Button,Icon,IconButton,Link,Input,Select,Switch,Checkbox,SearchInput,FilterBar,NavItem,NavGroup,Tabs,SegmentedControl,Breadcrumb,Metric,Table,ListRow,KeyValue,Pagination,Meter,LineChart,Notice,EmptyState,Dialog,Menu}=NS;
+
+function Demo(){return <div style={{display:"flex",flexDirection:"column",gap:34}}>
+  <div className="metrics"><Metric label="Objectives in scope" value="312" note="from the effective profile"/><Metric label="Resolved by inheritance" value="128" note="6 packages, all current"/><Metric label="Unknown" value="41" note="14 without an owner"/></div>
+  <LineChart height={170} min={0} max={220} xLabels={["Sep","Nov","Jan","Mar","May","Jul","Aug"]} format={v=>String(Math.round(v))} series={[{label:"Determined",points:[18,34,62,88,124,168,212]},{label:"Inherited",points:[44,58,71,96,112,124,128]},{label:"Unknown",points:[96,88,74,66,58,47,41]}]}/>
+  <div>
+    <Table columns={[{label:"Objective",width:112},{label:"Statement"},{label:"Owner",width:150},{label:"State",width:160},{label:"Updated",width:96}]}>
+      <tr className="on"><td><span className="t-mono">CM-06a.[02]</span></td><td className="trunc">Configuration settings applied and deviations documented</td><td>Network Eng</td><td><Badge tone="problem">Other than satisfied</Badge></td><td className="t-micro">Aug 19</td></tr>
+      <tr><td><span className="t-mono">IA-05(1)</span></td><td className="trunc">Authenticator strength enforced at the identity provider</td><td>Enterprise IAM</td><td><span className="muted">Satisfied</span></td><td className="t-micro">Jul 30</td></tr>
+      <tr><td><span className="t-mono">SC-07b.[01]</span></td><td className="trunc">Boundary protection at external interfaces</td><td><span className="muted">Unassigned</span></td><td><Badge tone="unknown">Unknown</Badge></td><td className="t-micro">Aug 12</td></tr>
+    </Table>
+    <div style={{marginTop:18}}><Pagination start={1} end={3} total={184} label="residual objectives"/></div>
+  </div>
+  <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) 300px",gap:44,alignItems:"start"}}>
+    <KeyValue items={[{label:"Provider",value:"Enterprise IAM · shared service"},{label:"Version",value:<span className="t-mono">v4.2</span>},{label:"Owner",value:<span className="muted">Unassigned</span>}]}/>
+    <div>
+      <Meter total={47} segments={[{label:"Provided",value:38},{label:"Consumer",value:7},{label:"Attestation",value:2}]}/>
+      <div style={{marginTop:26}}><ListRow title="Enterprise VPN v2.8" meta="Gateway config moved to GW-STD-12" trailing={<Badge tone="problem">Impacted</Badge>}/><ListRow title="Enterprise PKI v3.2" meta="You consume v3.1" trailing={<Badge tone="attention">Delta</Badge>}/></div>
+    </div>
+  </div>
+</div>;}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script></body></html>

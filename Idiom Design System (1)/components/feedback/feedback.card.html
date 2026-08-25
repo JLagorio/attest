@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Feedback" subtitle="Notice, EmptyState, Dialog, Menu" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--surface);margin:0;padding:22px 24px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.IdiomDesignSystem_c24a1d;
+const {Avatar,Badge,Button,Icon,IconButton,Link,Input,Select,Switch,Checkbox,SearchInput,FilterBar,NavItem,NavGroup,Tabs,SegmentedControl,Breadcrumb,Metric,Table,ListRow,KeyValue,Pagination,Meter,LineChart,Notice,EmptyState,Dialog,Menu}=NS;
+
+function Demo(){
+  const [open,setOpen]=React.useState(false);
+  return <div style={{display:"flex",flexDirection:"column",gap:30}}>
+    <Notice tone="problem" label="Conflict" action={<Link href="#">Assign decision</Link>}>PLM reports TPM Model Y; the program engineer reports Model Z. Six Secure Boot objectives are held until this is decided.</Notice>
+    <Notice tone="unknown" label="Evidence restricted" action={<Link href="#">Request access</Link>}>You are authorized to rely on this result but not to read the evidence behind it. Issued by Enterprise IAM for v4.2 on Jul 30.</Notice>
+    <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) 220px",gap:44,alignItems:"start"}}>
+      <EmptyState title="This system has not been defined yet" body="Unknown architecture is allowed. Add the components you know now, or assign discovery work to engineering — nothing here is assumed to be Not applicable." action={<Button variant="primary">Add component</Button>}/>
+      <Menu items={["Report change","Request applicability review","-",{label:"Submit for broader reuse"}]}/>
+    </div>
+    <div><Button onClick={()=>setOpen(true)}>Record determination</Button>{open&&<Dialog title="Record Other than satisfied on AC-06(1)?" confirmLabel="Record determination" onDismiss={()=>setOpen(false)} onConfirm={()=>setOpen(false)}>This becomes the authoritative determination for Nighthawk, cites the two submitted responses and the Jul 2026 access export, and creates a finding. Recorded as M. Okafor, effective today.</Dialog>}</div>
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script></body></html>
