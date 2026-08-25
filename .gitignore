@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Large build/export archives — keep out of git history.
+# Already-tracked zips are unaffected; this only stops new ones.
+*.zip
