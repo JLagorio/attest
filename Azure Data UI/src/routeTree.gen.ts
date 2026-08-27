@@ -13,8 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ControlsRouteImport } from './routes/controls'
 import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as RisksRouteImport } from './routes/risks'
 import { Route as VendorsRouteImport } from './routes/vendors'
+import { Route as ProgramsProgramIdRouteImport } from './routes/programs.$programId'
 import { Route as RisksRiskIdRouteImport } from './routes/risks.$riskId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -37,6 +39,11 @@ const EvidenceRoute = EvidenceRouteImport.update({
   path: '/evidence',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RisksRoute = RisksRouteImport.update({
   id: '/risks',
   path: '/risks',
@@ -46,6 +53,11 @@ const VendorsRoute = VendorsRouteImport.update({
   id: '/vendors',
   path: '/vendors',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsProgramIdRoute = ProgramsProgramIdRouteImport.update({
+  id: '/$programId',
+  path: '/$programId',
+  getParentRoute: () => ProgramsRoute,
 } as any)
 const RisksRiskIdRoute = RisksRiskIdRouteImport.update({
   id: '/$riskId',
@@ -58,8 +70,10 @@ export interface FileRoutesByFullPath {
   '/components': typeof ComponentsRoute
   '/controls': typeof ControlsRoute
   '/evidence': typeof EvidenceRoute
+  '/programs': typeof ProgramsRouteWithChildren
   '/risks': typeof RisksRouteWithChildren
   '/vendors': typeof VendorsRoute
+  '/programs/$programId': typeof ProgramsProgramIdRoute
   '/risks/$riskId': typeof RisksRiskIdRoute
 }
 export interface FileRoutesByTo {
@@ -67,8 +81,10 @@ export interface FileRoutesByTo {
   '/components': typeof ComponentsRoute
   '/controls': typeof ControlsRoute
   '/evidence': typeof EvidenceRoute
+  '/programs': typeof ProgramsRouteWithChildren
   '/risks': typeof RisksRouteWithChildren
   '/vendors': typeof VendorsRoute
+  '/programs/$programId': typeof ProgramsProgramIdRoute
   '/risks/$riskId': typeof RisksRiskIdRoute
 }
 export interface FileRoutesById {
@@ -77,8 +93,10 @@ export interface FileRoutesById {
   '/components': typeof ComponentsRoute
   '/controls': typeof ControlsRoute
   '/evidence': typeof EvidenceRoute
+  '/programs': typeof ProgramsRouteWithChildren
   '/risks': typeof RisksRouteWithChildren
   '/vendors': typeof VendorsRoute
+  '/programs/$programId': typeof ProgramsProgramIdRoute
   '/risks/$riskId': typeof RisksRiskIdRoute
 }
 export interface FileRouteTypes {
@@ -88,8 +106,10 @@ export interface FileRouteTypes {
     | '/components'
     | '/controls'
     | '/evidence'
+    | '/programs'
     | '/risks'
     | '/vendors'
+    | '/programs/$programId'
     | '/risks/$riskId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -97,8 +117,10 @@ export interface FileRouteTypes {
     | '/components'
     | '/controls'
     | '/evidence'
+    | '/programs'
     | '/risks'
     | '/vendors'
+    | '/programs/$programId'
     | '/risks/$riskId'
   id:
     | '__root__'
@@ -106,8 +128,10 @@ export interface FileRouteTypes {
     | '/components'
     | '/controls'
     | '/evidence'
+    | '/programs'
     | '/risks'
     | '/vendors'
+    | '/programs/$programId'
     | '/risks/$riskId'
   fileRoutesById: FileRoutesById
 }
@@ -116,6 +140,7 @@ export interface RootRouteChildren {
   ComponentsRoute: typeof ComponentsRoute
   ControlsRoute: typeof ControlsRoute
   EvidenceRoute: typeof EvidenceRoute
+  ProgramsRoute: typeof ProgramsRouteWithChildren
   RisksRoute: typeof RisksRouteWithChildren
   VendorsRoute: typeof VendorsRoute
 }
@@ -150,6 +175,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvidenceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/risks': {
       id: '/risks'
       path: '/risks'
@@ -164,6 +196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VendorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs/$programId': {
+      id: '/programs/$programId'
+      path: '/$programId'
+      fullPath: '/programs/$programId'
+      preLoaderRoute: typeof ProgramsProgramIdRouteImport
+      parentRoute: typeof ProgramsRoute
+    }
     '/risks/$riskId': {
       id: '/risks/$riskId'
       path: '/$riskId'
@@ -173,6 +212,18 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface ProgramsRouteChildren {
+  ProgramsProgramIdRoute: typeof ProgramsProgramIdRoute
+}
+
+const ProgramsRouteChildren: ProgramsRouteChildren = {
+  ProgramsProgramIdRoute: ProgramsProgramIdRoute,
+}
+
+const ProgramsRouteWithChildren = ProgramsRoute._addFileChildren(
+  ProgramsRouteChildren,
+)
 
 interface RisksRouteChildren {
   RisksRiskIdRoute: typeof RisksRiskIdRoute
@@ -189,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsRoute: ComponentsRoute,
   ControlsRoute: ControlsRoute,
   EvidenceRoute: EvidenceRoute,
+  ProgramsRoute: ProgramsRouteWithChildren,
   RisksRoute: RisksRouteWithChildren,
   VendorsRoute: VendorsRoute,
 }

@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Bell,
   Boxes,
+  ClipboardList,
   ChevronDown,
   CircleHelp,
   FileCheck2,
@@ -25,6 +26,7 @@ const navGroups: {
     label: "Monitor",
     items: [
       { label: "Overview", to: "/", icon: Gauge },
+      { label: "Programs", to: "/programs", icon: ClipboardList },
       { label: "Risk register", to: "/risks", icon: ShieldAlert, badge: "4" },
       { label: "Controls", to: "/controls", icon: FileCheck2 },
     ],

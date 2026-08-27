@@ -272,7 +272,9 @@ export function FilterChip({
   label,
   value,
   active,
-}: {
+  className,
+  ...props
+}: ComponentProps<"button"> & {
   label: string;
   value?: string;
   active?: boolean;
@@ -284,7 +286,9 @@ export function FilterChip({
         active
           ? "border-solid border-primary/30 bg-primary-soft text-primary"
           : "border-border-strong text-muted-foreground hover:border-muted-foreground/50 hover:text-foreground",
+        className,
       )}
+      {...props}
     >
       <span className="text-[13px] leading-none">+</span>
       {label}
